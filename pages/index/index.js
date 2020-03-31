@@ -7,7 +7,27 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    name:'Chi Shuo',
+    student:[
+      {id: 1, name: 'aa', age: 20},
+      {id: 2, name: 'bb', age: 21},
+      {id: 3, name: 'cc', age: 22},
+      {id: 4, name: 'dd', age: 23}
+    ],
+    counter: 0
+  },
+  handleBtnClick(){
+    // 界面不会刷新
+    // this.data.counter += 1
+    this.setData({
+      counter: this.data.counter + 1
+    })
+  },
+  handleSubtraction(){
+    this.setData({
+      counter: this.data.counter - 1
+    })
   },
   //事件处理函数
   bindViewTap: function() {
