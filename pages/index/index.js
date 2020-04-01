@@ -29,6 +29,9 @@ Page({
       counter: this.data.counter - 1
     })
   },
+  handleGetUserInfo(event){
+    console.log(event)
+  },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({

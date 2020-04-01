@@ -18,4 +18,9 @@
   <view>当前计数：{{counter}}</view>
   <button bindtap='handleBtnClick'>+</button>
   <button bindtap="handleSubtraction">-</button>
+  <!-- 获取用户信息 -->
+  <button open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">获取用户信息</button>
+  <!-- 展示用户信息 -->
+  <open-data type="userNickName"></open-data>
+  <open-data type="userAvatarUrl"></open-data>
 </view>
