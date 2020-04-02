@@ -1,0 +1,24 @@
+<!--pages/image/image.wxml-->
+<text>pages/image/image.wxml</text>
+<!-- 1.image的基本使用 -->
+<!-- 可以使用单标签也可以写成双标签 -->
+<!-- 有自己的默认大小 -->
+<!-- 行内块级元素 -->
+<!-- <image></image> -->
+
+<!-- 2.src:本地/远程 -->
+<image src="../../asset/test/001.png"/>
+<image src="/asset/test/001.png"/>
+<image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"/>
+
+<!-- 补充:相册中的图片 -->
+<button bindtap="handleChooseAlbum">选择图片</button>
+<image src="{{imagePath}}"></image>
+
+
+<!-- 3.bindload:监听图片加载完成 -->
+<!-- lazy-load:懒加载 -->
+<image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" bindload="handleImageLoad"/>
+
+<!-- 4.show-menu-by-longpress:长按识别小程序码 -->
+<image show-menu-by-longpress src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"/>
