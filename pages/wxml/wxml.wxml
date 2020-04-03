@@ -1,0 +1,59 @@
+<!--pages/wxml/wxml.wxml-->
+<text>pages/wxml/wxml.wxml</text>
+<!-- 1.wxml的格式 -->
+<!-- 闭合 大小写 -->
+
+<!-- 2.Mustache -->
+<view>{{message}}</view>
+<view>{{message}} {{firstname}}</view>
+<view>{{message + ' ' + firstname}}</view>
+<view>{{age >= 18 ? '成年人' : '未成年'}}</view>
+<view>{{nowTime}}</view>
+<button size='mini' bindtap="handleSwitchColor">切换颜色</button>
+<view class="box {{isActive ? 'active' : ''}}">哈哈哈</view>
+
+
+<view>------条件判断-------</view>
+<!-- wx:if -->
+<button size="mini" bindtap="handleSwitchShow">切换显示</button>
+<view wx:if="{{isShow}}">哈哈哈哈</view>
+<!-- wx:elif/wx:else -->
+<view wx:if="{{score >=90}}">优秀</view>
+<view wx:elif="{{score >= 80}}">良好</view>
+<view wx:elif="{{score >=60}}">及格</view>
+<view wx:else>不及格</view>
+
+<!-- hidden -->
+<view wx:if="{{false}}">hidden</view>
+<view hidden="{{true}}">hidden</view>
+<!-- hidden 和wx:if的区别 -->
+<!-- hidden隐藏是该组件依然存在 -->
+<!-- wx:if 隐藏该组件不存在 没有创建 -->
+<!-- 如果显示和隐藏切换的频率非常高 用hidden -->
+
+<!-- wx:for  遍历数组 字符串 数字-->
+<!-- <view wx:for="{{['abc', 'asd', 'dds']}}">{{item}} {{index}}</view>
+<view wx:for="asdf">{{item}}</view>
+<view wx:for="{{4}}">{{item}}</view> -->
+
+<!-- 2.block 不是组件 只接收控制属性 不在页面中做任何渲染 -->
+<block>
+  <button>按钮</button>
+  <view>哈哈哈</view>
+  <text>内容</text>
+</block>
+
+<!-- 3.item index 起名字 不能有- -->
+<!-- 嵌套循环 -->
+<view wx:for="{{movies}}" wx:for-item="movie" wx:for-index="i">{{i}} {{movie}}</view>
+
+<!-- key -->
+<!-- <view wx:for="{{['a', 'v', 's']}}" wx:key="">{{item}}</view> -->
+
+<!-- template 没有使用前不会被渲染 -->
+<template name="contentItem">
+  <button size="mini">{{btnText}}</button>
+  <view>{{content}}</view>
+</template>
+
+<template is="contentItem" data="{{btnText: '按钮', content: '哈哈哈和'}}"/>
