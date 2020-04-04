@@ -50,5 +50,23 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  handleTouchStart(){
+    console.log('handleTouchStart')
+  },
+  handleTouchMove(){
+    console.log('handleTouchMove')
+  },
+  handleTouchEnd(){
+    console.log('handleTouchEnd')
+  },
+  handleTap(){
+    console.log('handleTap')
+  },
+  handleLongpress(){
+    console.log('handleLongpress')
+  },
+  handleEventClick(event){
+    console.log(event)
   }
 })
